@@ -15,5 +15,22 @@
     <fragment
         android:id="@+id/channelFragment"
         android:name="com.luka.chatappwithstream.ui.channel.ChannelFragment"
-        android:label="ChannelFragment" />
+        android:label="ChannelFragment" >
+        <action
+            android:id="@+id/action_channelFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_channelFragment_to_createChannelDialog"
+            app:destination="@id/createChannelDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.luka.chatappwithstream.ui.chat.ChatFragment"
+        android:label="ChatFragment" >
+        <argument android:name="channelId" />
+    </fragment>
+    <dialog
+        android:id="@+id/createChannelDialog"
+        android:name="com.luka.chatappwithstream.ui.channel.CreateChannelDialog"
+        android:label="CreateChannelDialog" />
 </navigation>
